@@ -106,7 +106,7 @@ int getVideo()
 
 void getNetworkData(Addr *ip_address, Addr *netmask,  Addr *gateway, u8 *mac_address)
 {
-	if (if_configex((In_addr *)ip_address, (In_addr *)netmask, (In_addr *)gateway, true) < 0)
+	if (if_configex((In_addr *)ip_address, (In_addr *)netmask, (In_addr *)gateway, true, 5) < 0)
 		printf("\n[!] failed getting network data\n\n");
 
 	if (net_get_mac_address(mac_address) < 0)
